@@ -31,7 +31,7 @@ export default ({URL, APP_ID, JAVASCRIPT_KEY}) => {
                 query.skip((page - 1) * perPage);
 
                 if (order === "DESC") query.descending(field);
-                else if (order === "ASEC") query.ascending(field);
+                else if (order === "ASC") query.ascending(field);
                 Object.keys(filter).map(f => query.contains(f, filter[f]));
                 const results = await query.find();
                 return {
@@ -62,7 +62,7 @@ export default ({URL, APP_ID, JAVASCRIPT_KEY}) => {
                 query.limit(perPage);
                 query.skip((page - 1) * perPage);
                 if (order === "DESC") query.descending(field);
-                else if (order === "ASEC") query.ascending(field);
+                else if (order === "ASC") query.ascending(field);
 
                 const results = await query.find();
                 return {
